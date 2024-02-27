@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: cert-manager-freemium
+  namespace: argocd
+spec:
+  destination:
+    namespace: cert-manager-freemium
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - repoURL: https://charts.jetstack.io
+      chart: cert-manager
+      targetRevision: v1.13.3
+      helm:
+        valueFiles:
+        - $values/cert-manager/cert-manager-values.yaml
+    - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+      targetRevision: main
+      ref: values  
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
+    - ServerSideApply=true

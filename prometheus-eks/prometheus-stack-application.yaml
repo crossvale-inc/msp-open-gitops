@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-stack-freemium
+  namespace: argocd
+spec:
+  destination:
+    namespace: prometheus-stack-freemium
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+  - repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 55.11.0
+    chart: kube-prometheus-stack
+    helm:
+      valueFiles:
+      - $values/prometheus-eks/values.yaml
+  - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+    targetRevision: main
+    ref: values  
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
+    - ServerSideApply=true

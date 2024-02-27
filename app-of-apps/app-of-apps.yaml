@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: app-of-apps-freemium
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+  - path: cert-manager
+    repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+    targetRevision: main
+  - path: eks-dashboard
+    repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+    targetRevision: main
+  - path: ingress-nginx
+    repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+    targetRevision: main
+  - path: loki-eks
+    repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+    targetRevision: main
+  - path: prometheus-eks
+    repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+    targetRevision: main
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - ServerSideApply=true
+    - CreateNamespace=true

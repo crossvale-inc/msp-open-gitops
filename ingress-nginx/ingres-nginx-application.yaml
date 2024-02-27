@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-nginx-freemium
+  namespace: argocd
+spec:
+  destination:
+    namespace: ingress-nginx-freemium
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - repoURL: https://kubernetes.github.io/ingress-nginx
+      chart: ingress-nginx
+      targetRevision: 4.9.0
+      helm:
+        valueFiles:
+          - $values/ingress-nginx/ingress-nginx-values.yaml
+    - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+      targetRevision: main
+      ref: values  
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
+    - ServerSideApply=true
