@@ -4,11 +4,15 @@ metadata:
   name: elasticsearch-freemium
   namespace: argocd
 spec:
+  ignoreDifferences:
+  - kind: StatefulSet
+    jqPathExpressions:
+      - '.spec.volumeClaimTemplates[]?'
   destination:
     namespace: elasticsearch
     server: https://kubernetes.default.svc
   project: default
-  source:
+  sources:
     - repoURL: https://helm.elastic.co
       chart: elasticsearch
       targetRevision: 8.5.1
@@ -19,6 +23,7 @@ spec:
       targetRevision: main
       ref: values
   syncPolicy:
+    automated: {}
     syncOptions:
     - CreateNamespace=true
     - ServerSideApply=true
