@@ -10,7 +10,7 @@ spec:
   project: default
   sources:
     - repoURL: https://kubernetes.github.io/dashboard/
-      chart: kubernetes-dashboard-freemium
+      chart: kubernetes-dashboard
       targetRevision: 6.0.8
       helm:
         valueFiles:
