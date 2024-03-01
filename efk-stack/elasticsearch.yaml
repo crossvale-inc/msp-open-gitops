@@ -5,7 +5,8 @@ metadata:
   namespace: argocd
 spec:
   ignoreDifferences:
-  - kind: StatefulSet
+  - group: apps
+    kind: StatefulSet
     jqPathExpressions:
       - '.spec.volumeClaimTemplates[]?'
   destination:
