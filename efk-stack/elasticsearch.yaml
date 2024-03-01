@@ -10,7 +10,7 @@ spec:
     jqPathExpressions:
       - '.spec.volumeClaimTemplates[]?'
   destination:
-    namespace: elasticsearch
+    namespace: elasticsearch-freemium
     server: https://kubernetes.default.svc
   project: default
   sources:
