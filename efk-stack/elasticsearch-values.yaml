@@ -1,6 +1,6 @@
 resources:
   requests:
-    cpu: "1"
+    cpu: "500m"
     memory: "2048Mi"
 
 volumeClaimTemplate:
