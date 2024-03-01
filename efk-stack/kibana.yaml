@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kibana-freemium
+  namespace: argocd
+spec:
+  destination:
+    namespace: elasticsearch
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: kibana
+    repoURL: https://helm.elastic.co
+    targetRevision: 8.5.1
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ServerSideApply=true

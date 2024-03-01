@@ -17,10 +17,7 @@ spec:
   - path: eks-dashboard
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: main
-  - path: ingress-nginx
-    repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
-    targetRevision: main
-  - path: loki-eks
+  - path: efk-stack
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: main
   - path: prometheus-eks
