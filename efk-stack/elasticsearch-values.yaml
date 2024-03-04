@@ -2,6 +2,9 @@ resources:
   requests:
     cpu: "2"
     memory: "2048Mi"
+  limits:
+    cpu: "2"
+    memory: "2048Mi"
 
 volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
