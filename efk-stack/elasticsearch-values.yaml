@@ -1,7 +1,7 @@
-resources:
-  requests:
-    cpu: "500m"
-    memory: "2048Mi"
+#resources:
+#  requests:
+#    cpu: "500m"
+#    memory: "2048Mi"
 
 volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
