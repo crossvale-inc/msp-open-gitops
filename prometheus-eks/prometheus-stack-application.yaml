@@ -14,7 +14,7 @@ spec:
     chart: kube-prometheus-stack
     helm:
       valueFiles:
-      - $values/prometheus-eks/prometheus-stack-values.yaml
+      - $values/prometheus-eks/values/prometheus-stack-values.yaml
   - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: feature/all-values
     ref: values  
