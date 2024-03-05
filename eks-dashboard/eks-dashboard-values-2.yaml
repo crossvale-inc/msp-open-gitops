@@ -228,8 +228,7 @@ ingress:
   #       - kubernetes-dashboard.domain.com
 
 # Global dashboard settings
-settings:
-  {}
+settings: {}
   ## Cluster name that appears in the browser window title if it is set
   # clusterName: ""
   ## Max number of items that can be displayed on each list page
@@ -242,8 +241,7 @@ settings:
   # disableAccessDeniedNotifications: false
 
 ## Pinned CRDs that will be displayed in dashboard's menu
-pinnedCRDs:
-  []
+pinnedCRDs: []
   # - kind: customresourcedefinition
   ##  Fully qualified name of a CRD
   #   name: prometheuses.monitoring.coreos.com
