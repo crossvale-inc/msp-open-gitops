@@ -1,0 +1,3 @@
+serviceMonitor:
+  # Whether or not to create a Prometheus Operator service monitor.
+  enabled: true
