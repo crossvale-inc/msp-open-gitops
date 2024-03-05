@@ -18,7 +18,7 @@ spec:
         valueFiles:
         - $values/cert-manager/cert-manager-values.yaml
     - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
-      targetRevision: main
+      targetRevision: feature/all-values
       ref: values  
   syncPolicy:
     automated: {}

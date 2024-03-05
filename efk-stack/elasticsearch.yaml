@@ -21,7 +21,7 @@ spec:
         valueFiles:
         - $values/efk-stack/elasticsearch-values.yaml
     - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
-      targetRevision: main
+      targetRevision: feature/all-values
       ref: values
   syncPolicy:
     automated: {}

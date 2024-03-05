@@ -9,9 +9,15 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: kibana
-    repoURL: https://helm.elastic.co
-    targetRevision: 8.5.1
+    - chart: kibana
+      repoURL: https://helm.elastic.co
+      targetRevision: 8.5.1
+      helm:
+        valueFiles:
+        - $values/efk-stack/kibana-values.yaml
+    - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
+      targetRevision: feature/all-values
+      ref: values
   syncPolicy:
     automated: {}
     syncOptions:
