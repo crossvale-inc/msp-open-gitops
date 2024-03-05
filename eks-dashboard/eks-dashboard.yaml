@@ -12,12 +12,9 @@ spec:
     - repoURL: https://kubernetes.github.io/dashboard/
       chart: kubernetes-dashboard
       targetRevision: 6.0.8
-      directory:
-        recurse: true
-        exclude: 'eks-dashboard-values.yaml'
       helm:
         valueFiles:
-        - $values/eks-dashboard/eks-dashboard-values.yaml
+        - $values/eks-dashboard/values/eks-dashboard-values.yaml
     - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
       targetRevision: feature/all-values
       ref: values  
