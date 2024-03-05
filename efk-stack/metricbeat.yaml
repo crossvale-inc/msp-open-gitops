@@ -8,7 +8,7 @@ spec:
     namespace: elasticsearch-freemium
     server: https://kubernetes.default.svc
   project: default
-  source:
+  sources:
     - chart: metricbeat
       repoURL: https://helm.elastic.co
       targetRevision: 8.5.1
