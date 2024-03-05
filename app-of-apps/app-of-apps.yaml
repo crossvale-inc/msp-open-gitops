@@ -14,13 +14,13 @@ spec:
   - path: cert-manager
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: feature/all-values
-  - path: eks-dashboard
+  - path: eks-dashboard/application
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: feature/all-values
   - path: efk-stack
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: feature/all-values
-  - path: prometheus-eks
+  - path: prometheus-eks/application
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: feature/all-values
   syncPolicy:
