@@ -17,6 +17,10 @@ spec:
   - path: eks-dashboard/
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: feature/all-values
+    directory:
+      recurse: true
+      jsonnet: {}
+      exclude: '{eks-dashboard-values.yaml}'
   - path: efk-stack
     repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
     targetRevision: feature/all-values
