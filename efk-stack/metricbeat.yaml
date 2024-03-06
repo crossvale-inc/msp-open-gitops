@@ -14,7 +14,7 @@ spec:
       targetRevision: 8.5.1
       helm:
         valueFiles:
-        - $values/efk-stack/metricbeat-values.yaml
+        - $values/efk-stack/values/metricbeat-values.yaml
     - repoURL: https://github.com/crossvale-inc/msp-gitops-apps-freemium.git
       targetRevision: feature/all-values
       ref: values
