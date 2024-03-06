@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metricbeat-freemium
+  name: metricbeat
   namespace: argocd
 spec:
   destination:
-    namespace: elasticsearch-freemium
+    namespace: elasticsearch
     server: https://kubernetes.default.svc
   project: default
   sources:
