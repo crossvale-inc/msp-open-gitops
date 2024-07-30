@@ -1,5 +1,5 @@
 
-# MSP Open GitOps Stack
+# Crossvale Kubernetes Manager
 
 This repository contains one stack of applications along with their configuration that can be deployed on any Kubernetes cluster, such as EKS, AKS and OpenShift. This application stack was carefully selected to provide most of the functionality needed in an enterprise environment. 
 
